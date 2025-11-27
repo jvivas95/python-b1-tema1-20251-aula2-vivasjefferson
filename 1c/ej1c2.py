@@ -1,4 +1,6 @@
 """
+Jefferson Vivas
+
 Enunciado:
 Escribe una función llamada 'invert_list(lst)' que reciba como parámetro
 una lista 'lst' y la invierta utilizando recursión. La función debe
@@ -15,32 +17,20 @@ Ejemplo
     Salida:
     [5, 4, 3, 2, 1]
 
-Enunciat:
-
-Escriu una funció anomenada 'invert_list(lst)' que rebi com a paràmetre
-una llista 'lst' i la inverteixi utilitzant recursió. La funció ha
-tornar la llista invertida.
-
-Paràmetres:
-     lst (list): una llista d'elements.
-
-Exemple
-     Entrada:
-     lst = [1, 2, 3, 4, 5]
-     print(invert_list(lst))
-
-     Sortida:
-     [5, 4, 3, 2, 1]
-
 """
-
-
 def invert_list(lst):
     # Write here your code
-    pass
+    if len(lst)==0:
+        return []
+    else:
+        ultimo_valor=[lst[-1]]
+        lista_invertida = invert_list(lst[:-1])
+        return ultimo_valor + lista_invertida
+        
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# lst = [1, 20, 3, 40, 5]
-#print(invert_list(lst))
+# lst = [1, 2, 3, 4, 5]
+lst = ["a","b","c","d","e"]
+print(invert_list(lst))

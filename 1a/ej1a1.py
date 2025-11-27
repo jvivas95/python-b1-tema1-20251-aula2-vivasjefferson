@@ -1,4 +1,6 @@
 '''
+Jefferson Vivas
+
 Enunciado:
 Implementa la función 'fibonacci(fibonacci_number)' que contenga el algoritmo
 de Fibonacci y reciba como parámetro un valor numérico entero llamado 
@@ -18,31 +20,27 @@ Ejemplo:
     Salida:
     55
 
-Enunciat:
-Implementa la funció 'fibonacci(fibonacci_number)' que contingui l'algorisme
-de Fibonacci i rebi com a paràmetre un valor numèric enter anomenat
-'fibonacci_number' i torneu el valor de la sèrie Fibonacci en aquesta posició.
-Així mateix, si el valor no és numèric, o és menor a zero, cal llançar
-una excepció ValueError("missatge"), la qual pot incloure un missatge que hi hauria de
-correspondre amb el tipus d'error durant la validació.
-
-Paràmetres:
-- fibonacci_number: Nombre enter positiu superior a 0 que representa la
-posició a la sèrie Fibonacci.
-
-Exemple:
-     Entrada:
-     fibonacci(10)
-
-     Sortida:
-     55
-
 '''
 
 def fibonacci(fibonacci_number):
     # Write here your code
-    pass
+    if not isinstance(fibonacci_number, int):
+        raise ValueError("Error")
+    elif fibonacci_number < 0:
+        raise ValueError("Error")
+    else:
+        # Contador para las iteraciones
+        i=0
+        # Variable que acumulará el número que se irá sumando, 
+        acum=0
+        # Variable auxiliar que contendrá el número anterior para irlo sumando con el acumulado
+        aux=1
+        while i <fibonacci_number:
+            acum = acum + aux
+            aux  = acum - aux
+            i+=1
+    return acum
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(fibonacci(10))
+# print(fibonacci("fsa"))
